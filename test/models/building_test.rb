@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class BuildingTest < ActiveSupport::TestCase
-  test "update_all on distinct on (attribute) does not update all records" do
+  test "update_all on distinct on (attribute) updates only distinct records" do
     ["1 Infinite Loop ", "1 Microsoft Way", "123 Penny Lane"].each do |address|
       10.times { Building.create(address: address, updated: false) }
     end
