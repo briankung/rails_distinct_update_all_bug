@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Steps to reproduce with this repo:
 
-Things you may want to cover:
+1. `bin/rails db:create db:migrate`
+2. `bin/rails test`
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The important (and only) test here is the building test in `test/models/building_test.rb`.
