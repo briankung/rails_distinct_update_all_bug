@@ -11,8 +11,11 @@ class BuildingTest < ActiveSupport::TestCase
     number_selected = distincts.length
     number_updated = distincts.update_all(updated: true)
 
+    # This passes, so we know the number selected != the number of buildings
     refute_equal(number_selected, number_of_buildings)
+
+    # Each of the following fails, however
     refute_equal(number_updated, number_of_buildings)
-    refute(Building.pluck(:updated).all?)
+    refute(Building.pluck(:updated).all? {|updated| update == true})
   end
 end
